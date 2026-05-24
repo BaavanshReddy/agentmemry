@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "agentmem"
+version = "0.1.0"
+description = "Local-first memory for AI agents. SQLite + local embeddings. No cloud required."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "Baavansh Reddy Gundlapalli", email = "baavanshreddy@gmail.com" }
+]
+keywords = ["ai", "agents", "memory", "llm", "vector-search", "sqlite", "local-first", "embeddings"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "sentence-transformers>=2.7.0",
+    "numpy>=1.24.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/BaavanshReddy/agentmem"
+Repository = "https://github.com/BaavanshReddy/agentmem"
+Issues = "https://github.com/BaavanshReddy/agentmem/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["agentmem*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
