@@ -1,9 +1,9 @@
 """
-memory.py — The main AgentMem interface.
+memory.py — The main AgentMemry interface.
 This is the only class most users will ever need to touch.
 
 Quick start:
-    from agentmem import Memory
+    from agentmemry import Memory
 
     mem = Memory()
     mem.add("User prefers concise answers")
@@ -40,7 +40,7 @@ class Memory:
     def __init__(
         self,
         agent_id: str = "default",
-        db_path: str = "agentmem.db",
+        db_path: str = "agentmemry.db",
         model: str = "all-MiniLM-L6-v2",
         top_k: int = 5,
         threshold: float = 0.15,

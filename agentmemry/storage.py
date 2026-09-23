@@ -1,5 +1,5 @@
 """
-storage.py — SQLite-backed persistence layer for AgentMem.
+storage.py — SQLite-backed persistence layer for AgentMemry.
 All memories live in a single local .db file. No cloud. No setup.
 """
 
@@ -18,7 +18,7 @@ class MemoryStorage:
         memories(id, content, metadata, embedding_blob, created_at, updated_at, agent_id)
     """
 
-    def __init__(self, db_path: str = "agentmem.db"):
+    def __init__(self, db_path: str = "agentmemry.db"):
         self.db_path = Path(db_path)
         self._conn = sqlite3.connect(str(self.db_path), check_same_thread=False)
         self._conn.row_factory = sqlite3.Row

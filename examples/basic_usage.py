@@ -1,13 +1,13 @@
 """
-basic_usage.py — Quickstart example for AgentMem.
+basic_usage.py — Quickstart example for AgentMemry.
 
 Run with:
     python examples/basic_usage.py
 """
 
-from agentmem import Memory
+from agentmemry import Memory
 
-# Create a memory store (creates agentmem.db in the current directory)
+# Create a memory store (creates agentmemry.db in the current directory)
 mem = Memory(agent_id="my_agent")
 
 # Store some facts

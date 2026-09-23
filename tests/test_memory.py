@@ -1,5 +1,5 @@
 """
-test_memory.py — Core tests for AgentMem.
+test_memory.py — Core tests for AgentMemry.
 
 Run with:
     pytest tests/ -v
@@ -7,10 +7,10 @@ Run with:
 
 import os
 import pytest
-from agentmem import Memory
+from agentmemry import Memory
 
 
-TEST_DB = "test_agentmem.db"
+TEST_DB = "test_agentmemry.db"
 
 
 @pytest.fixture(autouse=True)

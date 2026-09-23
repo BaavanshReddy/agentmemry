@@ -1,18 +1,19 @@
-# AgentMem 🧠
+# AgentMemry 🧠
 
 **Local-first memory for AI agents. No cloud. No setup. Just SQLite.**
 
-[![PyPI version](https://badge.fury.io/py/agentmem.svg)](https://badge.fury.io/py/agentmem)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![PyPI version](https://img.shields.io/pypi/v/agentmemry.svg)](https://pypi.org/project/agentmemry/)
+[![Tests: pytest](https://img.shields.io/badge/tests-pytest-green.svg)](tests/)
 
-Most agent memory frameworks require Postgres, Neo4j, or a cloud vector database. **AgentMem doesn't.** It runs entirely on your machine using SQLite and local embeddings — making it the fastest way to add persistent memory to any Python agent.
+Most agent memory frameworks require Postgres, Neo4j, or a cloud vector database. **AgentMemry doesn't.** It runs entirely on your machine using SQLite and local embeddings — making it the fastest way to add persistent memory to any Python agent.
 
 ---
 
-## Why AgentMem?
+## Why AgentMemry?
 
-| Feature | AgentMem | Mem0 | Zep | Letta |
+| Feature | AgentMemry | Mem0 | Zep | Letta |
 |---|---|---|---|---|
 | Local-first (no cloud DB) | ✅ | ❌ | ❌ | ❌ |
 | Zero setup | ✅ | ⚠️ | ❌ | ❌ |
@@ -26,18 +27,28 @@ Most agent memory frameworks require Postgres, Neo4j, or a cloud vector database
 
 ## Installation
 
+AgentMemry is published on PyPI as [`agentmemry`](https://pypi.org/project/agentmemry/):
+
 ```bash
-pip install agentmem
+pip install agentmemry
 ```
 
-That's it. No Docker. No database server. No API keys.
+Or install from source in editable mode:
+
+```bash
+git clone https://github.com/BaavanshReddy/agentmemry.git
+cd agentmemry
+pip install -e .
+```
+
+No Docker. No database server. No API keys.
 
 ---
 
 ## Quickstart
 
 ```python
-from agentmem import Memory
+from agentmemry import Memory
 
 mem = Memory()
 
@@ -66,7 +77,7 @@ print(context)
 | Parameter | Default | Description |
 |---|---|---|
 | `agent_id` | `"default"` | Namespace — different agents sharing one DB stay isolated |
-| `db_path` | `"agentmem.db"` | Path to the SQLite file (created automatically) |
+| `db_path` | `"agentmemry.db"` | Path to the SQLite file (created automatically) |
 | `model` | `"all-MiniLM-L6-v2"` | sentence-transformers model for local embeddings |
 | `top_k` | `5` | Default results returned by `search()` |
 | `threshold` | `0.15` | Minimum similarity score (0–1) |
@@ -129,7 +140,7 @@ mem.stats()                          # Count, db path, model info
 ## Use case: Coding agent with persistent project memory
 
 ```python
-from agentmem import Memory
+from agentmemry import Memory
 
 mem = Memory(agent_id="coding_assistant")
 
@@ -170,7 +181,7 @@ User input
 sentence-transformers (local, offline)
     │  Converts text → float32 vector
     ▼
-SQLite (agentmem.db)
+SQLite (agentmemry.db)
     │  Stores content + embedding blob + metadata
     ▼
 Cosine similarity search (numpy)
@@ -187,8 +198,8 @@ No network calls. No external services. All computation happens in Python.
 
 ```bash
 # Clone the repo
-git clone https://github.com/BaavanshReddy/agentmem.git
-cd agentmem
+git clone https://github.com/BaavanshReddy/agentmemry.git
+cd agentmemry
 
 # Install dependencies
 pip install -e ".[dev]"
@@ -215,6 +226,7 @@ pytest tests/ -v
 
 ## Roadmap
 
+- [x] Publish to PyPI
 - [ ] Automatic memory deduplication
 - [ ] Time-decay scoring (older memories ranked lower)
 - [ ] Memory compression for long-running agents

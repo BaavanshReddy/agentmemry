@@ -1,5 +1,5 @@
 """
-coding_agent.py — AgentMem used in a coding agent context.
+coding_agent.py — AgentMemry used in a coding agent context.
 
 Simulates a coding assistant that remembers project decisions, preferences,
 and context across multiple sessions — without any cloud setup.
@@ -8,7 +8,7 @@ Run with:
     python examples/coding_agent.py
 """
 
-from agentmem import Memory
+from agentmemry import Memory
 
 # Separate agent_id for the coding assistant
 mem = Memory(agent_id="coding_assistant", db_path="coding_agent.db")
